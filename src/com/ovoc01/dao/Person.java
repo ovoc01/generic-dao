@@ -9,12 +9,12 @@ import com.ovoc01.dao.java.ObjectDAO;
 @Tables()
 @SuppressWarnings("unused")
 public class Person extends ObjectDAO {
-    @Column @PrimaryKey(prefix = "PRS",seqComp = "PersSeq")
+    @Column
+    @PrimaryKey(prefix = "PRS",seqComp = "PersSeq")
     String idPerson;
     @Column(name = "name")
     String nom;
 
-    @Column
     String prenom;
     @Column @Number
     Integer age;

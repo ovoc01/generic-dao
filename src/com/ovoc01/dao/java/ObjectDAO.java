@@ -2,6 +2,7 @@ package com.ovoc01.dao.java;
 
 import com.ovoc01.dao.annotation.Column;
 import com.ovoc01.dao.annotation.Number;
+import com.ovoc01.dao.annotation.PrimaryKey;
 import com.ovoc01.dao.annotation.Tables;
 import com.ovoc01.dao.utilities.Intermediate;
 
@@ -71,22 +72,35 @@ public class ObjectDAO {
 
     public ObjectDAO(){
     }
-    public void insert(){
-       Vector<Field> list = Intermediate.getFieldToInsert(this);
-        Field primaryKey = Intermediate.getPrimaryKeyIndex(this);
-        for (int i = 0; i < list.size(); i++) {
-            Field field = list.get(i);
-
-        }
+    public void insert() throws Exception{
+       Connection c = MyConnection.createPostGresConnection("localhost","5432","postgres","root","postgres");
+       if(c!=null){
+           try{
+               Intermediate.prepareSql(c);
+               Statement statement = c.createStatement();
+                statement.execute(insertQuery());
+                c.commit();
+           }catch (Exception e){
+                c.rollback();
+                e.printStackTrace();
+           }finally {
+               c.close();
+           }
+       }
     }
 
-    public String insertQuery() throws NoSuchMethodException,IllegalAccessException , InvocationTargetException {
+     String insertQuery() throws NoSuchMethodException,IllegalAccessException , InvocationTargetException {
         table = Intermediate.setTable(this);
         String query = String.format("insert into %s values(",table);
         Vector<Field> list = Intermediate.getFieldToInsert(this);
         Field primaryKey = Intermediate.getPrimaryKeyIndex(this);
         for (int i = 0; i < list.size() ; i++) {
-           if(list.get(i).isAnnotationPresent(Number.class)){
+            if(list.get(i).isAnnotationPresent(PrimaryKey.class)){
+                System.out.println("jek");
+                PrimaryKey primaryKey1 = list.get(i).getAnnotation(PrimaryKey.class);
+                query+=String.format("getiddb('%s','%s')",primaryKey1.seqComp(),primaryKey1.prefix());
+            }
+           else if(list.get(i).isAnnotationPresent(Number.class)){
                query+=Intermediate.getterValue(this,list.get(i).getName());
            }else {
                query+="'"+Intermediate.getterValue(this,list.get(i).getName())+"'";
@@ -94,6 +108,7 @@ public class ObjectDAO {
            if(i+1< list.size())query+=',';
         }
         query+=")";
+         System.out.println(query);
         return query;
     }
     void update(){

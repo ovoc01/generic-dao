@@ -11,7 +11,9 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Vector;
 
 /**
@@ -95,7 +97,7 @@ public class Intermediate {
     }
 
     public static String sqlCompleteZero(){
-        String query ="create function public.completezero(seq integer, prefix character varying) returns character varying " +
+        String query ="create or replace function public.completezero(seq integer, prefix character varying) returns character varying " +
                 "language plpgsql as" +
                 " $$ declare limite integer;" +
                 "alava integer;" +
@@ -134,5 +136,12 @@ public class Intermediate {
                 "    End\n" +
                 "$$;\n";
         return query;
+    }
+
+    public static void prepareSql(Connection c) throws  Exception{
+        Statement statement = c.createStatement();
+        statement.execute(Intermediate.sqlCompleteZero());
+        statement.execute(Intermediate.createPkSeq());
+        c.commit();
     }
 }

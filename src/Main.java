@@ -14,6 +14,6 @@ public class Main {
         person.setPrenom("Orerk");
         person.setIdPerson("PRS0001");
         person.setAge(18);
-        System.out.println(person.insertQuery());
+        person.insert();
     }
 }
