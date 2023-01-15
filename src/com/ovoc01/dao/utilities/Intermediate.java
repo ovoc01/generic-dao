@@ -93,4 +93,46 @@ public class Intermediate {
             return ref.getClass().getSimpleName().toLowerCase();
         }
     }
+
+    public static String sqlCompleteZero(){
+        String query ="create function public.completezero(seq integer, prefix character varying) returns character varying " +
+                "language plpgsql as" +
+                " $$ declare limite integer;" +
+                "alava integer;" +
+                "ng varchar;" +
+                "final varchar;" +
+                "temp integer;" +
+                "pref integer;" +
+                "BEGIN " +
+                "limite:=9;" +
+                "select cast(seq as varchar) into ng;" +
+                "select length(ng) into alava;" +
+                "select length(prefix) into pref;" +
+                "temp:=limite-(alava+pref);" +
+                "Loop final:=concat(final,0);" +
+                "temp:=temp-1;" +
+                "exit when  temp = 0;" +
+                "end loop;" +
+                "return concat(final,ng);" +
+                "end $$;";
+        return query;
+    }
+
+    public static String createPkSeq(){
+        String query="create or replace function public.getiddb(nameseq character varying, prefix character varying) returns character varying\n" +
+                "    language plpgsql\n" +
+                "as\n" +
+                "$$\n" +
+                " declare\n" +
+                "    seq integer;\n" +
+                "     id varchar;\n" +
+                "    Begin\n" +
+                "    \n" +
+                "        select nextval(nameSeq) into seq;\n" +
+                "        id:=concat(prefix,completeZero(seq,prefix));\n" +
+                "        return id;\n" +
+                "    End\n" +
+                "$$;\n";
+        return query;
+    }
 }
