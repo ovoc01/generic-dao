@@ -89,6 +89,9 @@ public class ObjectDAO {
        }
     }
 
+    /**
+     * function how create a query for insertion of this object in database
+     * */
      String insertQuery() throws NoSuchMethodException,IllegalAccessException , InvocationTargetException {
         table = Intermediate.setTable(this);
         String query = String.format("insert into %s values(",table);
@@ -115,28 +118,19 @@ public class ObjectDAO {
 
     }
 
+    /**
+     * function how self its self in a database using is primaryKey
+     * */
     Object find(){
         return null;
     }
 
+    /**
+     * function how create a vector of object based on the table appropriate to this object
+     * @return <h1>Vector of object</h1>
+     * */
     Vector<Object> select(){
         return null;
     }
 
-    public void createPrimaryKeySequence(int index) throws Exception{
-        Connection c = null;
-        try{
-            c = MyConnection.createPostGresConnection(getHost(),getPort(),getUser(),getPwd(),getDbName());
-            Statement statement = c.createStatement();
-            statement.execute(String.format("create or replace function %s ",getClass().getAnnotations()));
-        }catch (SQLException e){
-            e.printStackTrace();
-            c.rollback();
-        }catch (Exception e){
-            e.printStackTrace();
-            c.rollback();
-        }finally {
-            c.close();
-        }
-    }
 }
