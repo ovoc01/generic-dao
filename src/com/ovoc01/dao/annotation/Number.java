@@ -8,5 +8,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @SuppressWarnings("unused")
+/**
+ *An annotations for name who is used to set field type to Number in a ObjectDao class
+ * @author ovoc01
+ * */
 public @interface Number {
 }

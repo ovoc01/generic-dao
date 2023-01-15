@@ -8,6 +8,12 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @SuppressWarnings("unused")
+
+
+/**
+ *An annotations used to set Foreign Key in a ObjectDao class instance.
+ * @author ovoc01
+ * */
 public @interface ForeignKey {
     String reference() default "";
 }

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4545b16-e84d-48ed-af5d-0675e1480ec4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic-dao.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="d4545b16-e84d-48ed-af5d-0675e1480ec4" name="Changes" comment="intial">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Colonnes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/ForeignKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/ForeignKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Number.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/PrimaryKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/PrimaryKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/java/MyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/java/MyConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/java/ObjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/java/ObjectDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,8 +52,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673793385669</updated>
-      <workItem from="1673793390187" duration="1118000" />
+      <workItem from="1673793390187" duration="2779000" />
     </task>
+    <task id="LOCAL-00001" summary="intial">
+      <created>1673794567160</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673794567160</updated>
+    </task>
+    <task id="LOCAL-00002" summary="intial">
+      <created>1673794584128</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673794584128</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,5 +84,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="intial" />
+    <option name="LAST_COMMIT_MESSAGE" value="intial" />
   </component>
 </project>

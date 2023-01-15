@@ -8,6 +8,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @SuppressWarnings("unused")
-public @interface Colonnes {
+
+/**
+ *An annotations for column name who need to be used in a ObjectDao class
+ * @author ovoc01
+ * */
+public @interface Column {
     String name() default "";
 }

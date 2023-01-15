@@ -9,6 +9,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @SuppressWarnings("unused")
+
+/**
+ *An annotations used to set Primary Key in a ObjectDao class instance.
+ * @author ovoc01
+ * */
 public @interface PrimaryKey {
     String prefix() default "";
     String seqComp() default "";
