@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4545b16-e84d-48ed-af5d-0675e1480ec4" name="Changes" comment="intial">
+    <list default="true" id="d4545b16-e84d-48ed-af5d-0675e1480ec4" name="Changes" comment="modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Colonnes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/ForeignKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/ForeignKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Number.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/PrimaryKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/PrimaryKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/java/MyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/java/MyConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/generic-dao.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/java/ObjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/java/ObjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/utilities/Intermediate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/utilities/Intermediate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/ovoc01/Documents/lib/postgres.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -52,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673793385669</updated>
-      <workItem from="1673793390187" duration="2779000" />
+      <workItem from="1673793390187" duration="10502000" />
     </task>
     <task id="LOCAL-00001" summary="intial">
       <created>1673794567160</created>
@@ -68,7 +70,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673794584128</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="modif">
+      <created>1673796254077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673796254077</updated>
+    </task>
+    <task id="LOCAL-00004" summary="modif">
+      <created>1673796277353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673796277353</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +103,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intial" />
-    <option name="LAST_COMMIT_MESSAGE" value="intial" />
+    <MESSAGE value="modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif" />
   </component>
 </project>
