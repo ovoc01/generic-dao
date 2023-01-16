@@ -1,24 +1,21 @@
 package com.ovoc01.dao.utilities;
-/**
-*@author ovoc01
-* */
 
 import com.ovoc01.dao.annotation.Column;
 import com.ovoc01.dao.annotation.PrimaryKey;
 import com.ovoc01.dao.annotation.Tables;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
 /**
 * Intermediate class for object management
-*
+*@author ovoc01
 * */
 @SuppressWarnings("unused")
 public class Intermediate {
@@ -28,8 +25,19 @@ public class Intermediate {
      * @param rs a ResultSet which need to be transforms
      * @return an instance of reference object
     * */
-    public static Object createObject(Object reference, ResultSet rs){
-        return null;
+
+    public static Object createObject(Object reference, ResultSet rs) throws IllegalAccessException,
+            InstantiationException, SQLException,NoSuchMethodException ,InvocationTargetException{
+        Object result = reference.getClass().newInstance();
+        Vector<Field> list = getFieldToInsert(reference);
+        for (int i = 0; i < list.size(); i++) {
+           Object object = rs.getObject(getColmunName(list.get(i)));
+           // System.out.println(object);
+           Class aClass = rs.getObject(getColmunName(list.get(i))).getClass();
+            reference.getClass().getDeclaredMethod(createSetter(getColmunName(list.get(i))), aClass).invoke(result,object);
+
+        }
+        return result;
     }
 
     /**
@@ -57,6 +65,12 @@ public class Intermediate {
     public static String capitalizeFirstLetter(String input) {
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
+
+    /**
+     * Get the primary key field of  the object
+     * @param reference object to get reference
+     * @return Field
+     * */
     public static Field getPrimaryKeyIndex(Object reference){
         for (int i = 0;i<reference.getClass().getDeclaredFields().length;i++) {
             if(reference.getClass().getDeclaredFields()[i].isAnnotationPresent(PrimaryKey.class)){
@@ -66,18 +80,38 @@ public class Intermediate {
         return null;
     }
 
+
+    /**
+     * Function who create a getter using the field name
+     * @param field
+     * @return String
+     * */
     public static String createGetter(String field){
         return "get"+capitalizeFirstLetter(field);
     }
 
+
+    /**
+     * Function who create a setter using the field name
+     * @param field
+     * @return String
+     * */
     public static String createSetter(String field){
         return "set"+capitalizeFirstLetter(field);
     }
 
-    public static String getColmunName(){
-        return null;
+    public static String getColmunName(Field field){
+        Column column = field.getAnnotation(Column.class);
+        if(!column.name().equals("")) return column.name();
+        else return field.getName();
     }
 
+    /**
+     * Function who get the value of a specific field using the column name
+     * @param ref object reference
+     * @param  colName column name
+     * @return Object
+     * */
     public static Object getterValue(Object ref,String colName) throws NoSuchMethodException,IllegalAccessException , InvocationTargetException {
         String method = createGetter(colName);
         Object result = null;
@@ -87,6 +121,11 @@ public class Intermediate {
         return result;
     }
 
+    /**
+     * Function who create a table name
+     * @param ref object reference
+     * @return String
+     * */
     public static String setTable(Object ref){
         Tables tables = ref.getClass().getAnnotation(Tables.class);
         if(tables!=null && !tables.name().equals("")){
@@ -95,6 +134,9 @@ public class Intermediate {
             return ref.getClass().getSimpleName().toLowerCase();
         }
     }
+
+
+
 
     public static String sqlCompleteZero(){
         String query ="create or replace function public.completezero(seq integer, prefix character varying) returns character varying " +
@@ -138,10 +180,25 @@ public class Intermediate {
         return query;
     }
 
+    /**
+     *
+     * */
     public static void prepareSql(Connection c) throws  Exception{
         Statement statement = c.createStatement();
         statement.execute(Intermediate.sqlCompleteZero());
         statement.execute(Intermediate.createPkSeq());
         c.commit();
+    }
+
+    public static Vector<Field> getNotNullField(Object reference) throws NoSuchMethodException,InvocationTargetException,IllegalAccessException{
+        Vector<Field> list = getFieldToInsert(reference);
+        Vector<Field> list2 = new Vector<>();
+        for (Field field: list) {
+            String method = createGetter(field.getName());
+            if(reference.getClass().getDeclaredMethod(method).invoke(reference)!=null){
+                list2.add(field);
+            }
+        }
+        return list2;
     }
 }

@@ -9,6 +9,7 @@ import com.ovoc01.dao.utilities.Intermediate;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
@@ -71,9 +72,10 @@ public class ObjectDAO {
     }
 
     public ObjectDAO(){
+        table=Intermediate.setTable(this);
     }
     public void insert() throws Exception{
-       Connection c = MyConnection.createPostGresConnection("localhost","5432","postgres","root","postgres");
+       Connection c = MyConnection.createPostGresConnection("localhost","5432","postgres","password","postgres");
        if(c!=null){
            try{
                Intermediate.prepareSql(c);
@@ -82,11 +84,18 @@ public class ObjectDAO {
                 c.commit();
            }catch (Exception e){
                 c.rollback();
-                e.printStackTrace();
+                throw e;
            }finally {
                c.close();
            }
        }
+    }
+
+
+    public void insert(Connection c) throws Exception{
+        Intermediate.prepareSql(c);
+        Statement statement = c.createStatement();
+        statement.execute(insertQuery());
     }
 
     /**
@@ -99,7 +108,6 @@ public class ObjectDAO {
         Field primaryKey = Intermediate.getPrimaryKeyIndex(this);
         for (int i = 0; i < list.size() ; i++) {
             if(list.get(i).isAnnotationPresent(PrimaryKey.class)){
-                System.out.println("jek");
                 PrimaryKey primaryKey1 = list.get(i).getAnnotation(PrimaryKey.class);
                 query+=String.format("getiddb('%s','%s')",primaryKey1.seqComp(),primaryKey1.prefix());
             }
@@ -114,6 +122,7 @@ public class ObjectDAO {
          System.out.println(query);
         return query;
     }
+
     void update(){
 
     }
@@ -129,8 +138,13 @@ public class ObjectDAO {
      * function how create a vector of object based on the table appropriate to this object
      * @return <h1>Vector of object</h1>
      * */
-    Vector<Object> select(){
-        return null;
+    public Vector select(Connection c) throws Exception{
+        Statement statement = c.createStatement();
+        ResultSet rs = statement.executeQuery(String.format("Select * from %s",table));
+        Vector list = new Vector();
+        while(rs.next()){
+             list.add(Intermediate.createObject(this,rs));
+        }
+        return list;
     }
-
 }

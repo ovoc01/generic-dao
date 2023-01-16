@@ -6,14 +6,16 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 
 public class Main {
     public static void main(String[] args)  throws Exception{
+        Connection c = MyConnection.createPostGresConnection("localhost","5432","postgres","password","postgres");
+        new Person("Raselison","Toky",17).insert();
         Person person = new Person();
-        person.setNom("Mirindra");
-        person.setPrenom("Orerk");
-        person.setIdPerson("PRS0001");
-        person.setAge(18);
-        person.insert();
+        Vector<Person> list = person.select(c);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).getAge());
+        }
     }
 }

@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="generic-dao:jar2" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d4545b16-e84d-48ed-af5d-0675e1480ec4" name="Changes" comment="modif">
+      <change beforePath="$PROJECT_DIR$/.attach_pid7917" beforeDir="false" afterPath="$PROJECT_DIR$/.attach_pid7917" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic-dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/generic-dao.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/ForeignKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/ForeignKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Number.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/PrimaryKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/PrimaryKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/annotation/Tables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/java/MyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/java/MyConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/java/ObjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/java/ObjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ovoc01/dao/utilities/Intermediate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ovoc01/dao/utilities/Intermediate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +56,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ovoc01/Documents/lib/postgres.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/postgres.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,7 +80,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673793385669</updated>
-      <workItem from="1673793390187" duration="13486000" />
+      <workItem from="1673793390187" duration="14128000" />
+      <workItem from="1673851053273" duration="12485000" />
+      <workItem from="1673889417651" duration="596000" />
     </task>
     <task id="LOCAL-00001" summary="intial">
       <created>1673794567160</created>
@@ -108,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673807684120</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="modif">
+      <created>1673808037972</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673808037972</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

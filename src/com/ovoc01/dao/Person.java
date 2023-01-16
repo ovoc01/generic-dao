@@ -12,11 +12,12 @@ public class Person extends ObjectDAO {
     @Column
     @PrimaryKey(prefix = "PRS",seqComp = "PersSeq")
     String idPerson;
-    @Column(name = "name")
+    @Column
     String nom;
 
     String prenom;
-    @Column @Number
+    @Column
+    @Number
     Integer age;
 
     public String getIdPerson() {
@@ -48,6 +49,16 @@ public class Person extends ObjectDAO {
     }
 
     public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Person(){
+
+    }
+
+    public Person(String nom, String prenom, Integer age) {
+        this.nom = nom;
+        this.prenom = prenom;
         this.age = age;
     }
 }
