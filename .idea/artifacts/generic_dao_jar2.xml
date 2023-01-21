@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="generic-dao:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/generic_dao_jar2</output-path>
+    <root id="archive" name="generic-dao.jar">
+      <element id="module-output" name="generic-dao" />
+    </root>
+  </artifact>
+</component>

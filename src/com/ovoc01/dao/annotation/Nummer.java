@@ -8,12 +8,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 @SuppressWarnings("unused")
-
-
 /**
- *An annotations used to set Foreign Key in a ObjectDao class instance.
+ *An annotations for name who is used to set field type to Number in a ObjectDao class
  * @author ovoc01
  * */
-public @interface ForeignKey {
-    Class<?> classReference() default Object.class;
+public @interface Nummer {
 }
