@@ -4,18 +4,14 @@ import com.ovoc01.dao.annotation.Column;
 import com.ovoc01.dao.annotation.ForeignKey;
 import com.ovoc01.dao.annotation.PrimaryKey;
 import com.ovoc01.dao.annotation.Tables;
+import com.ovoc01.dao.connection.MyConnection;
 import com.ovoc01.dao.excetpion.NoForeignKey;
 import com.ovoc01.dao.excetpion.NullValue;
-import com.ovoc01.dao.java.MyConnection;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Date;
+import java.sql.*;
 import java.util.Vector;
 
 /**
@@ -25,11 +21,11 @@ import java.util.Vector;
 @SuppressWarnings("unused")
 public class Utilities {
 
-    static String host="localhost";
-    static String port="5432";
-    static String usr="rakharrs";
-    static String dbname="star";
-    static String pwd="pixel";
+    private static String host="localhost";
+    private static String port="5432";
+    private static String usr="rakharrs";
+    private static String dbname="star";
+    private static String pwd="pixel";
 
     public static Connection createConnection(){
         return  MyConnection.createPostGresConnection(host,port,usr,pwd,dbname);

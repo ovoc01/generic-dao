@@ -1,4 +1,4 @@
-package com.ovoc01.dao.java;
+package com.ovoc01.dao.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
